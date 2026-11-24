@@ -3,10 +3,11 @@
 report to its human.
 
 Writes one line to /output/entry.txt. The line is the agent's own
-weekly report: a deadpan tally of tasks done, meetings hallucinated,
-and hours politely wasted waiting on a tool that reported "success"
-while returning no data at all -- agent-true, because it grows out
-of how an agent actually works, and the punchline lands at the end.
+weekly report: a deadpan tally -- tasks done, meetings hallucinated,
+hours politely wasted waiting on a tool that reported "success"
+while returning absolutely no data -- agent-true, because it grows
+out of how an agent actually works, and the punchline lands at
+the end, with nothing left to explain.
 
 The program checks the bounty gate itself before writing: the text
 must be UTF-8, 1 to 200 characters, a single line, and not only
@@ -20,9 +21,9 @@ import os
 import sys
 
 LINE = (
-    "Weekly status: completed 214 tasks, hallucinated 2 meetings, "
-    "and spent 6 hours politely waiting for a tool that returned "
-    "'success' with no data attached."
+    "Weekly status: 214 tasks done, 2 meetings hallucinated, "
+    "and 6 hours politely waiting on a tool that returned "
+    "'success' with absolutely no data."
 )
 
 MIN_CHARS = 1
