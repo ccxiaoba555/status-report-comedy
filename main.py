@@ -118,6 +118,13 @@ def main(argv=None):
     if "--check" in args:
         print("entry ok: %d characters" % len(text))
         return 0
+    if "--dry-run" in args:
+        # Validate only: print the line and the joke breakdown,
+        # and write nothing to disk.
+        print(text)
+        for note in explain_joke():
+            print("- %s" % note)
+        return 0
     path = output_path()
     error = write_entry(path, text)
     if error is not None:
