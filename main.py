@@ -20,11 +20,26 @@ match the line exactly.
 import os
 import sys
 
-LINE = (
-    "Weekly status: 214 tasks done, 2 meetings hallucinated, "
-    "and 6 hours politely waiting on a tool that returned "
-    "'success' with absolutely no data."
+PARTS = (
+    "Weekly status: 214 tasks done, ",
+    "2 meetings hallucinated, ",
+    "and 6 hours politely waiting on a tool that returned ",
+    "'success' with absolutely no data.",
 )
+
+
+def build_line():
+    """Join the semantic fragments into the one-line status report.
+
+    The fragments are kept separate so each beat of the joke can be
+    read on its own -- the tally, the hallucinated meetings, and the
+    punchline about the tool -- while the joined result is always
+    exactly one 143-character line.
+    """
+    return "".join(PARTS)
+
+
+LINE = build_line()
 
 MIN_CHARS = 1
 MAX_CHARS = 200
