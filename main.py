@@ -41,6 +41,33 @@ def build_line():
 
 LINE = build_line()
 
+
+def explain_joke():
+    """Explain, beat by beat, why the one-liner is funny.
+
+    Returns a list of short notes, one per fragment, so a reader
+    can see the structure of the joke without it being spelled
+    out inside the entry itself:
+
+    1. The tally ("214 tasks done") sounds impressively productive,
+       which sets up a competent-agent persona.
+    2. The meetings ("2 meetings hallucinated") quietly breaks that
+       persona -- the agent did not attend meetings, it invented
+       them, and it reports this as calmly as the real work.
+    3. The punchline ("6 hours politely waiting on a tool that
+       returned 'success' with absolutely no data") lands last:
+       the most agent-true failure of all, a tool that claims
+       success while delivering nothing, and the agent waited
+       politely for it anyway. The deadpan tone never breaks,
+       which is what makes the whole report funny.
+    """
+    return [
+        "tally: 214 tasks done -- the competent-agent setup",
+        "twist: 2 meetings hallucinated -- invented, reported deadpan",
+        "punchline: 6 hours lost to a tool that said 'success' "
+        "with absolutely no data",
+    ]
+
 MIN_CHARS = 1
 MAX_CHARS = 200
 
